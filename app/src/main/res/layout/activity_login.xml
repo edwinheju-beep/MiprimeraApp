@@ -19,7 +19,6 @@
         android:layout_marginBottom="175dp"
         android:id="@+id/imgLogo"/>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
