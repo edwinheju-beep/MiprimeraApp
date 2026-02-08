@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="450px"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logouvgg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="175dp"
+        android:layout_marginBottom="175dp"
+        android:id="@+id/imgLogo"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilUsuario"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:hint="Usuario"
+        app:boxBackgroundColor="@color/material_on_primary_disabled"
+        app:boxStrokeWidth="0.38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:startIconDrawable="@drawable/ic_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilContra"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Contraseña"
+        app:boxBackgroundColor="@color/material_on_primary_disabled"
+        app:boxStrokeWidth="0.38dp"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@id/tilUsuario"
+        app:layout_constraintStart_toStartOf="@id/tilUsuario"
+        app:layout_constraintTop_toBottomOf="@id/tilUsuario"
+        app:startIconDrawable="@drawable/ic_confirm">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtContra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/material_on_surface_disabled"
+        android:text="Ingresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilContra" />
+
+    <TextView
+        android:id="@+id/txvRegistrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="¿No tienes cuenta? Regístrate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="10dp"
+        android:focusedSearchResultHighlightColor="@color/blue"
+        app:layout_constraintTop_toBottomOf="@id/btnIngresar" />
+
+    <!--<TextView
+        android:id="@+id/txvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200px"
+        android:text="Usuario:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/edtUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txvTitulo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtUsuario"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/txvNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txvNombre"
+        app:layout_constraintTop_toTopOf="@id/txvNombre" />
+
+    <TextView
+        android:id="@+id/txvContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Contraseña:"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/txvNombre"
+        app:layout_constraintTop_toBottomOf="@id/edtUsuario"
+
+        />
+
+    <EditText
+        android:id="@+id/edtContra"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="*******"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/txvContra"
+        app:layout_constraintEnd_toEndOf="@id/edtUsuario"
+        app:layout_constraintStart_toStartOf="@id/edtUsuario"
+        app:layout_constraintTop_toTopOf="@id/txvContra" />
+        -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
