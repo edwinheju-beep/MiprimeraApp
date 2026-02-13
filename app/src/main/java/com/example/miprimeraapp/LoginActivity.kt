@@ -10,6 +10,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.miprimeraapp.remote.RetrofitClient
+import retrofit2.Call
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +68,64 @@ class LoginActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Ingrese los datos solicitados", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun loginAPI(usuario: String, contra: String) {
+
+        val datos = mapOf(
+            "username" to usuario,
+            "contra" to contra
+        )
+
+        RetrofitClient.instance.login(datos)
+            .enqueue(object : retrofit2.Callback<Map<String, Any>> {
+
+                override fun onResponse(
+                    call: Call<Map<String, Any>>,
+                    response: retrofit2.Response<Map<String, Any>>
+                ) {
+                    if (response.isSuccessful) {
+
+                        val body = response.body()
+
+                        if (body?.containsKey("usuario") == true) {
+
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "Bienvenido $usuario",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            val intent = Intent(this@LoginActivity, MenuActivity::class.java)
+                            startActivity(intent)
+
+                        } else {
+
+                            val error = body?.get("error")?.toString()
+                            Toast.makeText(
+                                this@LoginActivity,
+                                error ?: "Credenciales incorrectas",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Error del servidor",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Map<String, Any>>, t: Throwable) {
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Error de conexión: ${t.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
     }
 
 }
