@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_e_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiPrimeraApp">
+        android:usesCleartextTraffic="true"
         <activity
             android:name=".ImcActivity"
             android:exported="false" />
