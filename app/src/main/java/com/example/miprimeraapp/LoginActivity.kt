@@ -37,7 +37,8 @@ class LoginActivity : AppCompatActivity() {
         btnIngresar.setOnClickListener {
             val usuario = edtUsuario.text.toString()
             val contra = edtContra.text.toString()
-            navegarMenu(usuario, contra)
+            //navegarMenu(usuario, contra)
+            loginAPI(usuario, contra)
 
         }
 
