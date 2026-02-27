@@ -16,4 +16,7 @@ interface ApiService {
 
     @POST("login.php")
     fun login(@Body datos: Map<String, String>): Call<Map<String, Any>>
+
+    @POST("verificar.php")
+    fun verificarCampo(@Body datos: Map<String, String>): Call<Map<String, Boolean>>
 }

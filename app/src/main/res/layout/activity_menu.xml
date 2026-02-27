@@ -57,4 +57,18 @@
         app:layout_goneMarginTop="500dp"
         android:backgroundTint="@color/material_on_background_emphasis_medium"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewBinding"
+        app:layout_constraintTop_toBottomOf="@+id/btnImc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnViewBinding"
+        app:layout_goneMarginTop="500dp"
+        android:backgroundTint="@color/material_on_background_emphasis_medium"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
